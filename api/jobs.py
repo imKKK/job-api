@@ -6,27 +6,6 @@ parser = reqparse.RequestParser()
 
 db_path = "./db/jobs.db"
 
-"""
-table name:  job_profiles
-
-create query: 
-
-CREATE TABLE job_profiles (
-                id integer primary key autoincrement,
-                job_id varchar(36) UNIQUE not null,
-                type varchar(10) not null,
-                url text null,
-                created_at varchar(30) not null,
-                company varchar(100) not null,
-                company_url text null,
-                location varchar(100) null,
-                title varchar(100) not null,
-                description text not null,
-                how_to_apply text not null,
-                company_logo text null
-            );
-"""
-
 
 class JobInfo(Resource):
     """
