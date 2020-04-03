@@ -1,7 +1,13 @@
 # job-api
- 
 
-job-api is a Python REST API
+job-api is a Python REST API. 
+The API fetchs data from `github jobs` API and stores in sqlite. 
+It Provides methods to trigger fetch operation and to serve job data.
+
+- to trigger fetch operation
+  `POST /jobs/sync`
+- to GET data
+  `GET /jobs`
 
 ###### dependencies
 
