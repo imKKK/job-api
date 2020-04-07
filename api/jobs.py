@@ -14,6 +14,7 @@ class JobInfo(Resource):
     def __init__(self):
         parser.add_argument("location")
         parser.add_argument("title")
+        parser.add_argument("search")
 
     def get(self):
         """
@@ -32,6 +33,8 @@ class JobInfo(Resource):
             query = "SELECT * FROM job_profiles WHERE location='{}'".format(args.location)
         elif args.title:
             query = "SELECT * FROM job_profiles WHERE title='{}'".format(args.title)
+        elif args.search:
+            query = "SELECT * FROM job_profiles WHERE title LIKE '%{0}%' OR location LIKE '%{0}%'".format(args.search)
         else:
             query = "SELECT * FROM job_profiles"
 
